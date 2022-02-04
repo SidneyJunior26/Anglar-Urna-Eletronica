@@ -1,0 +1,27 @@
+<h1 style="margin-bottom: 50px; margin-top: 10px;" class="text-center">Cadastrar Candidato</h1>
+
+<div class="container mat-elevation-z8 main-div">
+    <mat-card class="center">
+        <form [formGroup]="register" novalidate (ngSubmit)="submit()">
+            <mat-form-field class="full-width" style="width: 100%;">
+                <input matInput placeholder="Nome" name="candidateName" formControlName="candidateName" required>
+                <mat-error *ngIf="(register.touched || register.dirty) && f.candidateName.errors && f.candidateName.errors.required">Campo obrigatório.</mat-error>
+                <mat-error *ngIf="(register.touched || register.dirty) && f.candidateName.errors && f.candidateName.errors.minlength">Campo precisa ter no mínimo 5 caracteres.</mat-error>
+                <mat-error *ngIf="(register.touched || register.dirty) && f.candidateName.errors && f.candidateName.errors.maxlength">Campo pode ter no máximo 200 caracteres.</mat-error>
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <input matInput placeholder="Vice" name="deputyName" formControlName="deputyName">
+                <mat-error *ngIf="(register.touched || register.dirty) && f.deputyName.errors && f.deputyName.errors.required">Campo obrigatório.</mat-error>
+                <mat-error *ngIf="(register.touched || register.dirty) && f.deputyName.errors && f.deputyName.errors.minlength">Campo precisa ter no mínimo 5 caracteres.</mat-error>
+                <mat-error *ngIf="(register.touched || register.dirty) && f.deputyName.errors && f.deputyName.errors.maxlength">Campo pode ter no máximo 200 caracteres.</mat-error>
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <textarea matInput placeholder="Legenda" name="subtitle" formControlName="subtitle"></textarea>
+            </mat-form-field>
+            <mat-card-actions>
+                <button type="submit" class="btn btn-primary" mat-raised-button>Salvar</button>
+                <button type="reset" class="btn btn-secondary" mat-raised-button (click)="limparForm()">Cancelar</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,27 @@
+<div class="urn">
+    <h2 [textContent]="candidateName"></h2>
+    <input type="text" class="urn-screen" [value]="currentNumber" disabled/>
+
+    <div class="urn-keys">
+        <button type="button" (click)="getNumber('1')" value="1">1</button>
+        <button type="button" (click)="getNumber('2')" value="2">2</button>
+        <button type="button" style="width: 97%;" (click)="getNumber('3')" value="3">3</button>
+
+        <button type="button" (click)="getNumber('4')" value="4">4</button>
+        <button type="button" (click)="getNumber('5')" value="5">5</button>
+        <button type="button" style="width: 97%;" (click)="getNumber('6')" value="6">6</button>
+
+        <button type="button" (click)="getNumber('7')" value="7">7</button>
+        <button type="button" (click)="getNumber('8')" value="8">8</button>
+        <button type="button" style="width: 97%;" (click)="getNumber('9')" value="9">9</button>
+
+        <br>
+        <button type="button" (click)="getNumber('0')" value="0">0</button>
+        <br>
+
+        <button type="button" (click)="nullVote()" class="white">Branco</button>
+        <button type="button" (click)="clear()" class="all-clear">Corrigir</button>
+        <button type="button" (click)="vote()" class="confirm">Confirmar</button>
+
+    </div>
+</div>
